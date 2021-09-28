@@ -3,8 +3,10 @@ project(minmsg VERSION 0.1.0)
 
 set(CMAKE_CXX_STANDARD 17)
 
-include(CTest)
-add_subdirectory(test)
+if(BUILD_TESTING)
+  include(CTest)
+  add_subdirectory(test)
+endif()
 
 add_library(minmsg INTERFACE)
 target_include_directories(minmsg INTERFACE include/) 
